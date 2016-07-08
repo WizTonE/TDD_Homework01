@@ -11,10 +11,10 @@ namespace TDD_Homework1.Tests
 {
     class Order
     {
-        public int ID { get; set; }
-        public int COST { get; set; }
-        public int REVENUE { get; set; }
-        public int SELLPRICE { get; set; }
+        public int Id { get; set; }
+        public int Cost { get; set; }
+        public int Revenue { get; set; }
+        public int Sellprice { get; set; }
     }
 
     [TestClass()]
@@ -28,17 +28,17 @@ namespace TDD_Homework1.Tests
         {
             orders = new List<Order>
             {
-                new Order() { ID=1,  COST=1,  REVENUE=11,  SELLPRICE=21 },
-                new Order() { ID=2,  COST=2,  REVENUE=12,  SELLPRICE=22 },
-                new Order() { ID=3,  COST=3,  REVENUE=13,  SELLPRICE=23 },
-                new Order() { ID=4,  COST=4,  REVENUE=14,  SELLPRICE=24 },
-                new Order() { ID=5,  COST=5,  REVENUE=15,  SELLPRICE=25 },
-                new Order() { ID=6,  COST=6,  REVENUE=16,  SELLPRICE=26 },
-                new Order() { ID=7,  COST=7,  REVENUE=17,  SELLPRICE=27 },
-                new Order() { ID=8,  COST=8,  REVENUE=18,  SELLPRICE=28 },
-                new Order() { ID=9,  COST=9,  REVENUE=19,  SELLPRICE=29 },
-                new Order() { ID=10, COST=10, REVENUE=20,  SELLPRICE=30 },
-                new Order() { ID=11, COST=11, REVENUE=21,  SELLPRICE=31 },
+                new Order() { Id=1,  Cost=1,  Revenue=11,  Sellprice=21 },
+                new Order() { Id=2,  Cost=2,  Revenue=12,  Sellprice=22 },
+                new Order() { Id=3,  Cost=3,  Revenue=13,  Sellprice=23 },
+                new Order() { Id=4,  Cost=4,  Revenue=14,  Sellprice=24 },
+                new Order() { Id=5,  Cost=5,  Revenue=15,  Sellprice=25 },
+                new Order() { Id=6,  Cost=6,  Revenue=16,  Sellprice=26 },
+                new Order() { Id=7,  Cost=7,  Revenue=17,  Sellprice=27 },
+                new Order() { Id=8,  Cost=8,  Revenue=18,  Sellprice=28 },
+                new Order() { Id=9,  Cost=9,  Revenue=19,  Sellprice=29 },
+                new Order() { Id=10, Cost=10, Revenue=20,  Sellprice=30 },
+                new Order() { Id=11, Cost=11, Revenue=21,  Sellprice=31 },
             };
         }
 
@@ -50,7 +50,7 @@ namespace TDD_Homework1.Tests
             var service = new OrderProcess();
 
             //Act
-            Func<Order, int> selectProperty = s => s.COST;
+            Func<Order, int> selectProperty = s => s.Cost;
             var actual = service.GetDataByPaging(orders, 3, selectProperty);
             
             //Assert
@@ -65,7 +65,7 @@ namespace TDD_Homework1.Tests
             var service = new OrderProcess();
             
             //Act
-            Func<Order, int> selectProperty = s => s.REVENUE;
+            Func<Order, int> selectProperty = s => s.Revenue;
             var actual = service.GetDataByPaging(orders, 4, selectProperty);
             
             //Assert
